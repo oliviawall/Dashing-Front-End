@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Signup from './../../components/SignUp';
 import './styles.scss';
-import SignIn from './../../components/SignIn';
 
-const Login = props => {
-    return (
-        <SignIn />
-    );
+class Registration extends Component {
+
+    render() {
+        return <Signup />;
+    }
 }
 
-export default Login;
+export default Registration;

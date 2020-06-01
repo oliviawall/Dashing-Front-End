@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import Signup from './../../components/SignUp';
+import React from 'react';
 import './styles.scss';
 
-class Registration extends Component {
-
-    render() {
-        return <Signup />;
-    }
+const Footer = props => {
+    return (
+        <footer className= 'footer'>
+            <div className='wrap'>
+             © Dashing 2020
+            </div> 
+        </footer>
+    );
 }
 
-export default Registration;
+export default Footer;

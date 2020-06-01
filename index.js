@@ -1,38 +1,55 @@
 import React from 'react';
-// import JobSeekers from './../../assets/jobSeekers.png';
-// import Employers from './../../assets/employers.png';
-// import Background from './../../assets/redBackground.png';
-
 import './styles.scss';
+import { Link } from 'react-router-dom';
+import { auth } from './../../firebase/utils';
 
-const Directory = props => {
+import Logo from './../../assets/logo.png';
+
+const Header = props => {
+    const { currentUser } = props;
     return (
-        <div className='directory'>
+        <header className='header'>
             <div className='wrap'>
-                <div
-                    className='item'
-                    // style={{
-                    //     backgroundImage: `url(${Background})`
-                    // }}
-                >
-                    <div className='jobSearch'>
-                    <a>
-                    © Dashing 2020
-           </a>
-           </div>
+                <div className='logo'>
+                    <Link to='/'>
+                        <img src={Logo} alt='Dashing LOGO' />
+                    </Link>
                 </div>
-                {/* <div className='item'
-                    style={{
-                        backgroundImage: `url(${Employers})`
-                    }}
-                >
-                    <a>
-                        Employers
-              </a>
-                </div> */}
+
+                <div className='callToActions'>
+
+                    {currentUser && (
+                        <ul>
+                            <li>
+                                <span onClick ={() => auth.signOut()}>
+                                    LogOut
+                                </span>
+                            </li>
+                        </ul>
+                    )} 
+                    {!currentUser && (
+                        <ul>
+                            <li>
+                                <Link to='/registration'>
+                                    Register
+                            </Link>
+                            </li>
+                            <li>
+                                <Link to='/login'>
+                                    Login
+                            </Link>
+                            </li>
+                        </ul>
+                    )}
+
+                </div>
             </div>
-        </div>
+        </header>
     );
 };
 
-export default Directory;
+Header.defaultProps = {
+    currentUser: null
+};
+
+export default Header;

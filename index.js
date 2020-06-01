@@ -1,12 +1,18 @@
 import React from 'react';
 import './styles.scss';
 
-const Button = ({ children, ...otherProps }) => {
+const FormInput = ({ handleChange, label, ...otherProps }) => {
     return (
-        <button className='btn' {...otherProps}>
-            {children}
-        </button>
+        <div className='formRow'>
+            {label && (
+                <label>
+                    {label}
+                </label>
+            )}
+
+            <input className='formInput' onChange={handleChange} {...otherProps} />
+        </div>
     );
 }
 
-export default Button
+export default FormInput;

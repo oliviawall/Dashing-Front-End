@@ -1,13 +1,11 @@
 import React from 'react';
-import Directory from './../../components/Directory';
 import './styles.scss';
+import SignIn from './../../components/SignIn';
 
-const Homepage = props => {
+const Login = props => {
     return (
-        <section className='homepage'>
-          <Directory/>
-        </section>
+        <SignIn />
     );
-};
+}
 
-export default Homepage;
+export default Login;

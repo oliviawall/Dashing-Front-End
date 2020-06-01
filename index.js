@@ -1,14 +1,38 @@
 import React from 'react';
+// import JobSeekers from './../../assets/jobSeekers.png';
+// import Employers from './../../assets/employers.png';
+// import Background from './../../assets/redBackground.png';
+
 import './styles.scss';
 
-const Footer = props => {
+const Directory = props => {
     return (
-        <footer className= 'footer'>
+        <div className='directory'>
             <div className='wrap'>
-             © Dashing 2020
-            </div> 
-        </footer>
+                <div
+                    className='item'
+                    // style={{
+                    //     backgroundImage: `url(${Background})`
+                    // }}
+                >
+                    <div className='jobSearch'>
+                    <a>
+                    © Dashing 2020
+           </a>
+           </div>
+                </div>
+                {/* <div className='item'
+                    style={{
+                        backgroundImage: `url(${Employers})`
+                    }}
+                >
+                    <a>
+                        Employers
+              </a>
+                </div> */}
+            </div>
+        </div>
     );
-}
+};
 
-export default Footer;
+export default Directory;
